@@ -267,7 +267,6 @@ return {
       return opts
     end,
   },
-
   -- {
   --   "jose-elias-alvarez/typescript.nvim",
   --   event = "User AstroLspSetup",
@@ -341,5 +340,27 @@ return {
     { import = "astrocommunity.project.nvim-spectre" },
     { import = "astrocommunity.pack.typescript" },
     { import = "astrocommunity.pack.python" },
+  },
+  -- {
+  --   "AstroNvim/astrotheme",
+  --   opts = {
+  --     highlights = {
+  --       astrodark = {
+  --         ["@variable"] = { fg = C.red, bg = C.none },
+  --       },
+  --     },
+  --   },
+  -- },
+  {
+    "AstroNvim/astrotheme",
+    opts = {
+      highlights = {
+        astrodark = {
+          modify_hl_groups = function(hl, c)
+            hl.Identifier.fg = c.red -- any variable name
+          end,
+        },
+      },
+    },
   },
 }
