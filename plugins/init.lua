@@ -316,6 +316,13 @@ return {
     end,
   },
   {
+    "AstroNvim/astrocommunity",
+    { import = "astrocommunity.completion.copilot-lua-cmp" },
+    { import = "astrocommunity.project.nvim-spectre" },
+    { import = "astrocommunity.pack.typescript" },
+    { import = "astrocommunity.pack.python" },
+  },
+  {
     "jose-elias-alvarez/null-ls.nvim",
     opts = function()
       local null_ls = require "null-ls"
@@ -334,23 +341,6 @@ return {
       }
     end,
   },
-  {
-    "AstroNvim/astrocommunity",
-    { import = "astrocommunity.completion.copilot-lua-cmp" },
-    { import = "astrocommunity.project.nvim-spectre" },
-    { import = "astrocommunity.pack.typescript" },
-    { import = "astrocommunity.pack.python" },
-  },
-  -- {
-  --   "AstroNvim/astrotheme",
-  --   opts = {
-  --     highlights = {
-  --       astrodark = {
-  --         ["@variable"] = { fg = C.red, bg = C.none },
-  --       },
-  --     },
-  --   },
-  -- },
   {
     "AstroNvim/astrotheme",
     opts = {
