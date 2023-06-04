@@ -379,8 +379,9 @@ return {
   },
   { "mbledkowski/neuleetcode.vim", lazy = false },
   {
-    "andrewferrier/debugprint.nvim",
+    "tri-cao/debugprint.nvim",
     event = "BufEnter",
+    branch = "remove_std_error_python",
     opts = {
       display_counter = false,
       print_tag = "🚀 ==>> ",
