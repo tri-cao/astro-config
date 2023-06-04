@@ -320,6 +320,7 @@ return {
     { import = "astrocommunity.completion.copilot-lua-cmp" },
     { import = "astrocommunity.project.nvim-spectre" },
     { import = "astrocommunity.pack.typescript" },
+    { import = "astrocommunity.editing-support.todo-comments-nvim" },
     -- { import = "astrocommunity.pack.python" },
   },
   {
