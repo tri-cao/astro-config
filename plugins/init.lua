@@ -320,7 +320,7 @@ return {
     { import = "astrocommunity.completion.copilot-lua-cmp" },
     { import = "astrocommunity.project.nvim-spectre" },
     { import = "astrocommunity.pack.typescript" },
-    { import = "astrocommunity.pack.python" },
+    -- { import = "astrocommunity.pack.python" },
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
@@ -351,6 +351,40 @@ return {
           end,
         },
       },
+    },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      local utils = require "astronvim.utils"
+
+      if opts.ensure_installed ~= "all" then
+        opts.ensure_installed = utils.list_insert_unique(opts.ensure_installed, { "python", "toml" })
+      end
+    end,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    opts = function(_, opts)
+      local utils = require "astronvim.utils"
+      opts.ensure_installed = utils.list_insert_unique(opts.ensure_installed, { "pyright", "ruff_lsp" })
+    end,
+  },
+  {
+    "jay-babu/mason-null-ls.nvim",
+    opts = function(_, opts)
+      local utils = require "astronvim.utils"
+      opts.ensure_installed = utils.list_insert_unique(opts.ensure_installed, { "isort", "black" })
+    end,
+  },
+  { "mbledkowski/neuleetcode.vim", lazy = false },
+  {
+    "andrewferrier/debugprint.nvim",
+    event = "BufEnter",
+    opts = {},
+    -- Dependency only needed for NeoVim 0.8
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
     },
   },
 }
