@@ -381,7 +381,10 @@ return {
   {
     "andrewferrier/debugprint.nvim",
     event = "BufEnter",
-    opts = {},
+    opts = {
+      display_counter = false,
+      print_tag = "🚀 ==>> ",
+    },
     -- Dependency only needed for NeoVim 0.8
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
